@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 quit = False
 
 #----Setup dataframe and query it here prior to creating visualisation and UI functions----#
-original_df = pd.read_csv('Data/Australian Vehicle Prices.csv')
+original_df = pd.read_csv('archive/Australian Vehicle Prices.csv')
 
-Australian_Vehicle_Prices_df = pd.read_csv(Data/Australian Vehicle Prices.csv',
+Australian_Vehicle_Prices_df = pd.read_csv('archive/Australian Vehicle Prices.csv',
                             header=None,
                             names=['Engine', 'DriveType', 'Model'])
 
@@ -15,13 +15,13 @@ Australian_Vehicle_Prices_df = pd.read_csv(Data/Australian Vehicle Prices.csv',
 def showOriginalData():
     print(original_df)
 
-    def showOriginalData():
+def showOriginalData():
     print(original_df)
 
 def showUpdatedData():
     print(Australian_Vehicle_Prices_df)
 
- def showCharts():
+def showCharts():
     Australian_Vehicle_Prices_df.plot(
                     kind='bar',
                     x='Country',
@@ -34,16 +34,16 @@ def showUpdatedData():
 def userOptions():
     global quit
 
-print("""Welcome to the Australian Vehicle Prices Extraordinaire!
-          
-    Please select an option:
-    1 - Show the original dataset
-    2 - Show the updated Data Frame
-    3 - Visualise the cost of Car Prices
-    4 - Quit Program
-        """)
+    print("""Welcome to the Australian Vehicle Prices Extraordinaire!
+            
+        Please select an option:
+        1 - Show the original dataset
+        2 - Show the updated Data Frame
+        3 - Visualise the cost of Car Prices
+        4 - Quit Program
+            """)
 
- try:
+    try:
         choice = int(input('Enter Selection: '))
 
         if choice == 1:
