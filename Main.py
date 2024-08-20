@@ -7,9 +7,9 @@ quit = False
 #----Setup dataframe and query it here prior to creating visualisation and UI functions----#
 original_df = pd.read_csv('archive/Australian Vehicle Prices.csv')
 
-Australian_Vehicle_Prices_df = pd.read_csv('archive/Australian Vehicle Prices.csv',
-                            header=None,
-                            names=['Engine', 'DriveType', 'Model'])
+Australian_Vehicle_Prices_df = pd.read_csv('archive/Australian Vehicle Prices.csv')
+Australian_Vehicle_Prices_df = Australian_Vehicle_Prices_df[Australian_Vehicle_Prices_df['Price'].str.contains('POA')==False ]
+Australian_Vehicle_Prices_df = Australian_Vehicle_Prices_df['Price'].astype(float)
 
 #----Define Functions Below----#
 def showOriginalData():
@@ -24,13 +24,10 @@ def showUpdatedData():
 def showCharts():
     Australian_Vehicle_Prices_df.plot(
                     kind='bar',
-                    x='Country',
-                    y='AUD',
-                    x='Model',
-                    y='Engine',
+                    x='Price',
+                    y='Brand',
                     color='blue',
-                    alpha=0.3,
-                    title='Cost of a Big Mac in AUD')
+                    alpha='0.3',
                     title='The engine and Drivetype of models')
     plt.show()
 
