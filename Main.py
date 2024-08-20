@@ -26,9 +26,12 @@ def showCharts():
                     kind='bar',
                     x='Country',
                     y='AUD',
+                    x='Model',
+                    y='Engine',
                     color='blue',
                     alpha=0.3,
                     title='Cost of a Big Mac in AUD')
+                    title='The engine and Drivetype of models')
     plt.show()
 
 def userOptions():
