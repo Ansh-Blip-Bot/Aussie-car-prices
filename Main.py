@@ -11,6 +11,8 @@ Australian_Vehicle_Prices_df = pd.read_csv('archive/Australian Vehicle Prices.cs
 Australian_Vehicle_Prices_df = Australian_Vehicle_Prices_df[Australian_Vehicle_Prices_df['Price'].str.contains('POA')==False ]
 Australian_Vehicle_Prices_df = Australian_Vehicle_Prices_df['Price'].astype(float)
 
+
+
 #----Define Functions Below----#
 def showOriginalData():
     print(original_df)
@@ -24,10 +26,10 @@ def showUpdatedData():
 def showCharts():
     Australian_Vehicle_Prices_df.plot(
                     kind='bar',
-                    x='Price',
-                    y='Brand',
+                    x='Model',
+                    y='Price',
                     color='blue',
-                    alpha='0.3',
+                    alpha=0.3,
                     title='The engine and Drivetype of models')
     plt.show()
 
